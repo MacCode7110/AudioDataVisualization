@@ -1,10 +1,10 @@
 import BarChart from './component/BarChart'
 
-//https://d3js.org/d3.v5.min.js
-
 function App()
 {
-  return (<BarChart />);
+  return (<BarChart data={[25, 5, 30, 65, 15, 35]}
+    width={700}
+    height={300}/>);
 }
 
 export default App;
