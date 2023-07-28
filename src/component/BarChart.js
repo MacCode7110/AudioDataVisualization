@@ -25,11 +25,8 @@ class BarChart extends Component {
   render() {
     return (
       <div>
-        <section className = "section is-small">
-          <h1 className = "title has-text-weight-bold">Audio Data Visualization</h1>
-        </section>
         <section className = "section is-medium">
-          <div id={"barChart" + this.props.id}> </div>
+          <div className = "" id={"barChart" + this.props.id}></div>
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"></link>
         </section>
       </div>  
