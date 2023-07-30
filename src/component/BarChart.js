@@ -8,16 +8,37 @@ class BarChart extends Component {
     return this.drawBarChart();
   }
 
+  //300
+
   drawBarChart() {
     const data = this.props.data;
-    const svg = d3.select("body").append("svg").attr("width", this.props.width).attr("height", this.props.height);
+    
+    //Set a variable with different properties
+    let dimensions = {
+      width: this.props.width,
+      height: this.props.height,
+      margins: {
+        top: 15,
+        right: 30,
+        bottom: 0,
+        left: 30,
+      }
+    }
+
+    //Create svg
+
+    const svg = d3.select("#root").append("svg").attr("width", dimensions.width).attr("height", dimensions.height).append("g")
+        .style("transform", "translate(" + dimensions.margins.left + "," + dimensions.margins.right + ")");
+
+    //Draw the chart using the svg container:
+
     svg.selectAll("rect")
     .data(data)
     .enter()
     .append("rect")
     .attr("x", (d, i) => i * 70)
-    .attr("y", (d, i) => this.props.height - 10 * d)
-    .attr("width", 65)
+    .attr("y", (d, i) => dimensions.height - 10 * d)
+    .attr("width", dimensions.width)
     .attr("height", (d, i) => d * 10)
     .attr("fill", "purple");
   }
