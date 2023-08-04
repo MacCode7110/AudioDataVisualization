@@ -14,10 +14,7 @@ class BarChart extends Component {
   const data = this.props.data;
   const width = this.props.width;
   const height = this.props.height;
-  const marginTop = 30;
-  const marginRight = 0;
-  const marginBottom = 30;
-  const marginLeft = 40;
+  const barPadding = 2;
 
   //Create the SVG container.
   const svg = d3.select("#root").append("svg")
